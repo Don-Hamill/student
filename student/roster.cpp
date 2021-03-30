@@ -26,40 +26,40 @@ void Roster::parse(string studentData)
 
     //student data parse
     
-    int stfr = studentData.find(","); 
-    string studentID = studentData.substr(0, stfr);
+    int Pos1 = studentData.find(","); 
+    string studentID = studentData.substr(0, Pos1);
 
-    int stfl = stfr + 1;
-    stfr = studentData.find(",", stfl);
-    string firstName = studentData.substr(stfl, stfr - stfl);
+    int Pos2 = Pos1 + 1;
+    Pos1 = studentData.find(",", Pos2);
+    string firstName = studentData.substr(Pos2, Pos1 - Pos2);
     
-    stfl = stfr + 1;
-    stfr = studentData.find(",", stfl);
-    string lastName = studentData.substr(stfl, stfr - stfl);
+    Pos2 = Pos1 + 1;
+    Pos1 = studentData.find(",", Pos2);
+    string lastName = studentData.substr(Pos2, Pos1 - Pos2);
     
-    stfl = stfr + 1;
-    stfr = studentData.find(",", stfl);
-    string Email = studentData.substr(stfl, stfr - stfl);
+    Pos2 = Pos1 + 1;
+    Pos1 = studentData.find(",", Pos2);
+    string Email = studentData.substr(Pos2, Pos1 - Pos2);
     
-    stfl = stfr + 1;
-    stfr = studentData.find(",", stfl);
-    int age = stoi(studentData.substr(stfl, stfr - stfl));
+    Pos1 = Pos1 + 1;
+    Pos1 = studentData.find(",", Pos2);
+    int age = stoi(studentData.substr(Pos2, Pos1 - Pos2));
     
-    stfl = stfr + 1;
-    stfr = studentData.find(",", stfl);
-    int daysInCourse1 = stoi(studentData.substr(stfl, stfr - stfl));
+    Pos2 = Pos1 + 1;
+    Pos1 = studentData.find(",", Pos2);
+    int daysInCourse1 = stoi(studentData.substr(Pos2, Pos1 - Pos2));
     
-    stfl = stfr + 1;
-    stfr = studentData.find(",", stfl);
-    int daysInCourse2 = stoi(studentData.substr(stfl, stfr - stfl));
+    Pos2 = Pos1 + 1;
+    Pos1 = studentData.find(",", Pos2);
+    int daysInCourse2 = stoi(studentData.substr(Pos2, Pos1 - Pos2));
     
-    stfl = stfr + 1;
-    stfr = studentData.find(",", stfl);
-    int daysInCourse3 = stoi(studentData.substr(stfl, stfr - stfl));
+    Pos2 = Pos1 + 1;
+    Pos1 = studentData.find(",", Pos2);
+    int daysInCourse3 = stoi(studentData.substr(Pos2, Pos1 - Pos2));
     
-    stfl = stfr + 1;
-    stfr = studentData.find(",", stfl);
-    to_string(degreeProgram) = studentData.substr(stfl, stfr - stfl);
+    Pos2 = Pos1 + 1;
+    Pos1 = studentData.find(",", Pos2);
+    to_string(degreeProgram) = studentData.substr(Pos2, Pos1 - Pos2);
 
     add(studentID, firstName, lastName, Email, age, daysInCourse1, daysInCourse2, daysInCourse3, degreeProgram);
   
@@ -103,7 +103,7 @@ void Roster::remove(string studentID) {
 
 
 
-// Prints a student’s average number of days in the three courses.
+// Prints a studentâ€™s average number of days in the three courses.
 void Roster::printAverageDaysInCourse(string studentID) {
     for (int i = 0; i <= studentCount; ++i) {
         if (classRosterArray[i]->GetstudentID() == studentID) {
