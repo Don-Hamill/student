@@ -24,7 +24,7 @@ void Roster::parse(string studentData)
         degreeProgram = SOFTWARE;
     }
 
-    //student data parse
+    //student data parse, vectorizing not allowed
     
     int Pos1 = studentData.find(","); 
     string studentID = studentData.substr(0, Pos1);
